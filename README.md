@@ -1,16 +1,30 @@
-# React + Vite
+📌 Project Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern expense tracking web application built with React and Material UI (MUI).
+The app allows users to manage their expenses with full CRUD functionality (create, read, update, delete), featuring clean UI components, dialogs, and responsive layouts.
 
-Currently, two official plugins are available:
+It uses Firebase for authentication and data persistence, supports real-time updates, and provides a smooth user experience with loading states, confirmation dialogs, and notifications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔧 Tech Stack
 
-## React Compiler
+React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Material UI (MUI)
 
-## Expanding the ESLint configuration
+Firebase (Authentication & Firestore)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Context API for state management
+
+Notistack for notifications
+
+✨ Features
+
+Add, edit, and delete expenses
+
+Confirmation dialogs for destructive actions
+
+Loading states for async operations
+
+Responsive and modern UI
+
+Clean and reusable component structure
