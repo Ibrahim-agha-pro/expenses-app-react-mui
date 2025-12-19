@@ -18,6 +18,8 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 export const Auth = () => {
+  const [loading, setLoading] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true);
@@ -26,11 +28,14 @@ export const Auth = () => {
   const navigate = useNavigate();
 
   async function handleSubmit() {
+    if (loading) {
+      enqueueSnackbar("please wait a sec", { variant: "warning" });
+    }
     if (!email || !password) {
       enqueueSnackbar("Please fill all fields", { variant: "warning" });
       return;
     }
-
+    setLoading(true);
     try {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
@@ -55,6 +60,8 @@ export const Auth = () => {
       navigate("/profile");
     } catch (error) {
       enqueueSnackbar(error.message, { variant: "error" });
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -84,7 +91,12 @@ export const Auth = () => {
         {isLogin ? "Sign In" : "Sign Up"}
       </ColorButton>
 
-      <Button onClick={() => setIsLogin((p) => !p)}>
+      <Button
+        loading={loading}
+        loadingPosition="start"
+        disabled={loading}
+        onClick={() => setIsLogin((p) => !p)}
+      >
         {isLogin
           ? "Don't have an account? Sign Up"
           : "Already have an account? Sign In"}
